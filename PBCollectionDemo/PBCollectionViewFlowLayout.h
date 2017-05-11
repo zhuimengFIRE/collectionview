@@ -10,9 +10,11 @@
 
 @interface PBCollectionViewFlowLayout : UICollectionViewFlowLayout
 
-@property (nonatomic) NSUInteger itemCountPerRow;
-// 一页显示多少行
+// 每行显示几个
+@property (nonatomic) NSUInteger itemCountRow;
+// 显示多少行
 @property (nonatomic) NSUInteger rowCount;
+
 @property (strong, nonatomic) NSMutableArray *allAttributes;
 
 @end

@@ -12,10 +12,11 @@
 
 static NSString * const kPBCollectionViewCell = @"PBCollectionViewCell";
 
-//屏幕宽度
-#define SCREENW [UIScreen mainScreen].bounds.size.width
-#define SCREENH [UIScreen mainScreen].bounds.size.height
-#define SCREEN_SCALE ([ UIScreen mainScreen ].bounds.size.width/320)
+// 屏幕高度
+#define kScreenHeight           [[UIScreen mainScreen] bounds].size.height
+// 屏幕宽度
+#define kScreenWidth            [[UIScreen mainScreen] bounds].size.width
+#define kScreenScale            ([ UIScreen mainScreen ].bounds.size.width/320)
 
 
 @interface ViewController ()<UICollectionViewDataSource>
@@ -39,13 +40,13 @@ static NSString * const kPBCollectionViewCell = @"PBCollectionViewCell";
 - (void)configureView {
     UICollectionViewFlowLayout *layout =[[PBCollectionViewFlowLayout alloc]init];
     
-    layout.itemSize = CGSizeMake(SCREENW/2, SCREENW/4);
-    layout.minimumInteritemSpacing = 0*SCREEN_SCALE;
-    layout.minimumLineSpacing = 0*SCREEN_SCALE;
-    layout.headerReferenceSize = CGSizeMake(0*SCREEN_SCALE, 0*SCREEN_SCALE);
+    layout.itemSize = CGSizeMake(kScreenWidth/3, kScreenWidth/4);
+    layout.minimumInteritemSpacing = 0*kScreenScale;
+    layout.minimumLineSpacing = 0*kScreenScale;
+    layout.headerReferenceSize = CGSizeMake(0*kScreenScale, 0*kScreenScale);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
-    UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,100, SCREENW,SCREENW/2)
+    UICollectionView *collectionView =[[UICollectionView alloc] initWithFrame:CGRectMake(0,100, kScreenWidth,kScreenWidth/2)
                                                          collectionViewLayout:layout];
     collectionView.backgroundColor = [UIColor whiteColor];
     collectionView.dataSource = self;

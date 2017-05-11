@@ -15,7 +15,7 @@
     [super prepareLayout];
     
     self.rowCount = 2;
-    self.itemCountPerRow = 2;
+    self.itemCountRow = 3;
     self.allAttributes = [NSMutableArray array];
     
     NSUInteger count = [self.collectionView numberOfItemsInSection:0];
@@ -68,10 +68,10 @@
                        resultX:(NSUInteger *)x
                        resultY:(NSUInteger *)y
 {
-    NSUInteger page = item/(self.itemCountPerRow*self.rowCount);
+    NSUInteger page = item/(self.itemCountRow*self.rowCount);
     
-    NSUInteger theX = item % self.itemCountPerRow + page * self.itemCountPerRow;
-    NSUInteger theY = item / self.itemCountPerRow - page * self.rowCount;
+    NSUInteger theX = item % self.itemCountRow + page * self.itemCountRow;
+    NSUInteger theY = item / self.itemCountRow - page * self.rowCount;
     if (x != NULL) {
         *x = theX;
     }
